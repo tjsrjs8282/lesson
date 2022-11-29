@@ -82,10 +82,87 @@ function solution(n, k) {
 
 //문자열 뒤집기
 //문자열 my_string이 매개변수로 주어집니다. my_string을 거꾸로 뒤집은 문자열을 return하도록 solution 함수를 완성해주세요.
-function soltuion(my_string) {
+function solution(my_string) {
   let answer = [];
   for (let i = my_string.length - 1; i >= 0; i--) {
-    answer = push(my_string[i]);
+    answer += my_string[i];
   }
+  return answer;
+}
+
+function solution(my_string) {
+  let answer = [...my_string].reverse().join("");
+  return answer;
+}
+
+//배열 뒤집기
+//정수가 들어 있는 배열 num_list가 매개변수로 주어집니다. num_list의 원소의 순서를 거꾸로 뒤집은 배열을 return하도록 solution 함수를 완성해주세요.
+function solution(num_list) {
+  let answer = [];
+  for (let i = num_list.length - 1; i >= 0; i--) {
+    answer.push(num_list[i]);
+  }
+  return answer;
+}
+
+function solution(num_list) {
+  var answer = [];
+  var j = num_list.length;
+  for (var i = 1; i <= j; i++) {
+    answer.push(num_list[j - i]);
+  }
+  return answer;
+}
+
+function solution(num_list) {
+  return num_list.reverse();
+}
+
+//아이스 아메리카노
+//아이스 아메리카노는 한잔에 5,500원입니다.
+//머쓱이가 가지고 있는 돈 money가 매개변수로 주어질 때,
+//머쓱이가 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을
+// 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+
+function solution(money) {
+  let answer = [];
+  answer.push(parseInt(money / 5500));
+  answer.push(money % 5500);
+  return answer;
+}
+
+//배열가르기
+//정수 배열 numbers와 정수 num1, num2가 매개변수로 주어질 때,
+// numbers의 num1번 째 인덱스부터 num2번째 인덱스까지 자른 정수 배열을
+// return 하도록 solution 함수를 완성해보세요.
+
+function solution(numbers, num1, num2) {
+  let answer = [];
+  answer = numbers.slice(num1, num2 + 1);
+  return answer;
+}
+
+function solution(numbers, num1, num2) {
+  let answer = [];
+  for (let i = num1; i <= num2; i++) {
+    answer.push(numbers[i]);
+  }
+  return answer;
+}
+
+//짝수 홀수 개수
+//정수가 담긴 리스트 num_list가 주어질 때, num_list의 원소 중 짝수와 홀수의 개수를 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+function solution(num_list) {
+  let answer = [];
+  let even = [];
+  let odd = [];
+  for (let i = 0; i < num_list.length; i++) {
+    if (num_list[i] % 2 === 0) {
+      even.push(i);
+    } else {
+      odd.push(i);
+    }
+  }
+  answer = [even.length, odd.length];
   return answer;
 }
