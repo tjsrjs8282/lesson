@@ -55,6 +55,7 @@ export default function Category() {
     <ul style={cateStyle}>
       {cateName.map((name) => (
         <li>
+          <a href=""></a>
           <img src={name.image} alt={name.name} />
           <p>{name.name}</p>
         </li>
