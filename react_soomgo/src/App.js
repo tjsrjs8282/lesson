@@ -1,14 +1,17 @@
-import styles from "./App.css";
-import Header from "./components/header/Header";
-import CategoryList from "./components/category/CategoryList";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Header name="react" color="red" className={styles.test} />
-      <CategoryList />
-    </>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default App;

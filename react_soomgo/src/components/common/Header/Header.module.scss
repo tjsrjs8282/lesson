@@ -1,0 +1,20 @@
+@import '../../shared.scss';
+
+.headerWrap {
+    width: "100%";
+    border-bottom: 1px solid #eee;
+    
+}
+
+.headerBox{
+    width: $infoWidth;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;height: 80px;
+}
+
+.headerLeft {
+display: flex;align-items: center;
+justify-content: flex-start;
+}

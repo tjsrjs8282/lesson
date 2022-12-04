@@ -1,0 +1,29 @@
+@import '../shared.scss';
+
+.subButton {
+    margin-right: 0.5rem;
+    transition: all .3s ease;
+    color: #2d2d2d;
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+    padding: 0.5rem 0.75rem;
+    font-size: .875rem;
+    line-height: 1.286;
+    border-radius: 8px;
+}
+.subButton:hover {
+    background-color: #a4a4a4a4;
+}
+
+.subButton:focus {
+    background-color: $siteColor1;
+    border-color: $siteColor1;
+    font-weight: bold;
+}
+
+.moreBtn{
+    color: $siteColor1 !important;
+    font-size: 1rem;
+    position: relative;
+    padding-right: 20px;
+}
