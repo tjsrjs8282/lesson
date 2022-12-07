@@ -48,7 +48,7 @@ const Service = () => {
                     <SubButton title={list}/>
                     ))}
                 </div>
-                <MoreBtn/>
+                <MoreBtn title="상품 더보기" link="/"/>
             </div>
             <ul>
                 {serviceDummy.map(list => (

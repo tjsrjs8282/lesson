@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../components/common/Header'
 import Category from './Category'
+import Community from './Community'
 import Service from './Service'
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
      <Header/>
      <Category/>
      <Service/>
+     <Community/>
     </>
   )
 }
