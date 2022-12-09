@@ -1,0 +1,44 @@
+@import '../../../components/shared.scss';
+
+.serviceWrap {
+    width: "100%";
+}
+.serviceBox{
+    width: $infoWidth;
+    margin: $infoMarginBottom;
+    position: relative;
+}
+
+.subListBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.serviceBox ul {
+    display: flex;
+
+}
+.serviceBox ul li{
+    width: 23.5%; margin-right: 2%;
+    
+    overflow: hidden;
+}
+
+.serviceBox ul li:nth-child(4n) {margin-right: 0;}
+
+.serviceBox ul li img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.serviceBox ul li p {
+    font-weight: bold;
+    margin: 5px 0px
+}
+
+.numTxt {color: #585858;  font-size: 0.9rem; display: flex;  align-items: center;}
+.numTxt span {margin-left: 5px;}
+
+
