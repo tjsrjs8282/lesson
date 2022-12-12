@@ -1,4 +1,11 @@
-.menuWrap {}
-.menuWrap ul {display: flex;}
-.menuWrap ul li {margin-left: 20px;}
-.menuWrap ul li a {font-size: 0.95rem;}
+.menuWrap {
+  ul {
+    display: flex;
+    li {
+      margin-left: 20px;
+      a {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

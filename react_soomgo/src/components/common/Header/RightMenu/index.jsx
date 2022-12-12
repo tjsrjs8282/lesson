@@ -1,35 +1,35 @@
-import React from 'react'
-import Menu from './Menu';
-import $ from './RightMenu.module.scss'
+import React from "react";
+import Menu from "./Menu/Menu";
+import $ from "./RightMenu.module.scss";
 
 const menuName = [
   {
-    name : "받은요청",
-    link : "request",
+    name: "받은요청",
+    link: "request",
   },
   {
-    name : "바로견적",
-    link : "estimate",
+    name: "바로견적",
+    link: "estimate",
   },
   {
-    name : "채팅",
-    link : "chatting",
+    name: "채팅",
+    link: "chatting",
   },
   {
-    name : "프로필",
-    link : "profil",
+    name: "프로필",
+    link: "profil",
   },
-]
+];
 const RightMenu = () => {
   return (
     <div className={$.menuWrap}>
       <ul>
-        {menuName.map(list => (
-          <Menu name={list.name} link={list.link}/>
+        {menuName.map((list) => (
+          <Menu name={list.name} link={list.link} />
         ))}
-      </ul> 
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default RightMenu
+export default RightMenu;

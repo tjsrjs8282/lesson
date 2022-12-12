@@ -1,9 +1,9 @@
-$titleColor:#000;
+@import "style/shared.scss";
 
 .title {
-    color: $titleColor;
-    font-size: 24px;
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 20px;
+  color: $titleColor;
+  font-size: 24px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
