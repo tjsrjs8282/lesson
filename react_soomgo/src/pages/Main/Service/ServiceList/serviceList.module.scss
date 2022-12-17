@@ -1,0 +1,11 @@
+@import "style/shared.scss";
+
+.numTxt {
+  color: #585858;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  span {
+    margin-left: 5px;
+  }
+}

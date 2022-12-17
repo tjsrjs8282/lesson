@@ -1,4 +1,13 @@
-.menuWrap {margin-left: 30px;}
-.menuWrap ul {display: flex;}
-.menuWrap ul li {margin-right: 20px;}
-.menuWrap ul li a {font-size: 0.95rem; font-weight: bold;}
+.menuWrap {
+  margin-left: 30px;
+  ul {
+    display: flex;
+    li {
+      margin-right: 20px;
+      a {
+        font-size: 0.95rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
