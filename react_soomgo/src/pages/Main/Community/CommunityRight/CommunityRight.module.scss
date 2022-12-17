@@ -1,0 +1,33 @@
+.rightList {
+  padding: 0.75rem 0.125rem;
+  a {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 13.125rem;
+    height: 8.75rem;
+    margin: 0 1.25rem 0 0;
+  }
+  .cardTxtName {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cardTxtTit {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cardTxtAtr {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #737373;
+    font-size: 0.875rem;
+  }
+}
