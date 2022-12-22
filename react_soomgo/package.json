@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,10 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src build",
+    "start": "craco start",
+    "build": "react-scriptsc build",
     "test": "react-scripts test",
-    "dev": "webpack-dev-server",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,12 +40,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "webpack": "^5.75.0",
-    "webpack-cil": "^0.0.1-security",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
-  },
+  "devDependencies": {},
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "webpack.config.js",
   "keywords": [],

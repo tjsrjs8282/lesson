@@ -80,3 +80,83 @@ function solution(my_string) {
 
   return c;
 }
+
+//개미 군단
+//개미 군단이 사냥을 나가려고 합니다. 개미군단은 사냥감의 체력에 딱 맞는 병력을 데리고 나가려고 합니다.
+/// 장군개미는 5의 공격력을, 병정개미는 3의 공격력을 일개미는 1의 공격력을 가지고 있습니다.
+//예를 들어 체력 23의 여치를 사냥하려고 할 때, 일개미 23마리를 데리고 가도 되지만,
+//장군개미 네 마리와 병정개미 한 마리를 데리고 간다면 더 적은 병력으로 사냥할 수 있습니다.
+//사냥감의 체력 hp가 매개변수로 주어질 때, 사냥감의 체력에 딱 맞게 최소한의 병력을 구성하려면
+// 몇 마리의 개미가 필요한지를 return하도록 solution 함수를 완성해주세요.
+
+function solution(hp) {
+  let a = Math.floor(hp / 5);
+  let b = hp % 5;
+  a += Math.floor(b / 3);
+  let c = (hp % 5) % 3;
+  a += Math.floor(c / 1);
+  return a;
+}
+
+//세균 증식
+//어떤 세균은 1시간에 두배만큼 증식한다고 합니다.
+//처음 세균의 마리수 n과 경과한 시간 t가 매개변수로 주어질 때 t시간 후 세균의 수를
+// return하도록 solution 함수를 완성해주세요.
+
+function solution(n, t) {
+  let answer = n;
+  for (let i = 0; i < t; i++) {
+    answer *= 2;
+  }
+  return answer;
+}
+function solution(n, t) {
+  return n * Math.pow(2, t);
+}
+
+//문자열 정렬하기 (1)
+//문자열 my_string이 매개변수로 주어질 때, my_string 안에 있는 숫자만 골라
+// 오름차순 정렬한 리스트를 return 하도록 solution 함수를 작성해보세요.
+
+function solution(my_string) {
+  let a = my_string.replace(/[a-z]/gi, "");
+
+  b = [...a].map((data) => Number(data)).sort((a, b) => a - b);
+  return b;
+}
+
+//대문자와 소문자
+//문자열 my_string이 매개변수로 주어질 때, 대문자는 소문자로 소문자는 대문자로 변환한 문자열을 return하도록 solution 함수를 완성해주세요.
+function solution(my_string) {
+  let answer = "";
+  for (let i = 0; i < my_string.length; i++) {
+    if (my_string[i] === my_string[i].toLowerCase()) {
+      answer += my_string[i].toUpperCase();
+    } else {
+      answer += my_string[i].toLowerCase();
+    }
+  }
+  return answer;
+}
+//let i of 사용
+function solution(my_string) {
+  let answer = "";
+  for (let i of my_string) {
+    if (i === i.toUpperCase()) {
+      answer += i.toLowerCase();
+    } else {
+      answer += i.toUpperCase();
+    }
+  }
+  return answer;
+}
+
+//map 필터 사용 후 join
+function solution(my_string) {
+  return my_string
+    .split("")
+    .map((char) =>
+      char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+    )
+    .join("");
+}
