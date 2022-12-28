@@ -105,3 +105,146 @@ function solution(numbers) {
     numbers[numbers.length - 1] * numbers[numbers.length - 2]
   );
 }
+
+//합성수 찾기
+//약수의 개수가 세 개 이상인 수를 합성수라고 합니다.
+//자연수 n이 매개변수로 주어질 때 n이하의 합성수의 개수를 return하도록 solution 함수를 완성해주세요.
+
+function solution(n) {
+  let answer = 0;
+
+  for (let i = 1; i <= n; i++) {
+    let count = 0;
+    for (let j = 1; j <= i; j++) {
+      count += i % j === 0 ? 1 : 0;
+    }
+    answer += count >= 3 ? 1 : 0;
+  }
+  return answer;
+}
+
+//중복된 문자 제거
+//문자열 my_string이 매개변수로 주어집니다.
+// my_string에서 중복된 문자를 제거하고 하나의 문자만 남긴 문자열을 return하도록 solution 함수를 완성해주세요.
+function solution(my_string) {
+  let answer = [...my_string];
+
+  return answer.filter((ele, dex) => answer.indexOf(ele) === dex).join("");
+}
+
+//다른사람 풀이
+//new set 활용 , 생성자 함수 또한 바로 Spread 연산자 가능
+//Set은 중복이 허용되지 않는 객체이다. 안에 이미 같은 값이 존재한다면 추가되지 않는다.
+//그래서 중복값을 허용하지 않아야 한다면 Set을 이용하면 된다.
+function solution(my_string) {
+  return [...new Set(my_string)].join("");
+}
+
+//A로 B 만들기
+//문자열 before와 after가 매개변수로 주어질 때, before의 순서를 바꾸어 after를 만들 수 있으면 1을,
+// 만들 수 없으면 0을 return 하도록 solution 함수를 완성해보세요.
+function solution(before, after) {
+  // 정렬하여 각 인덱스를 비교함
+  before = [...before].sort();
+  after = [...after].sort();
+  return before.filter((a, i) => a === after[i]).length === after.length
+    ? 1
+    : 0;
+}
+//다른사람 풀이
+function solution(before, after) {
+  return before.split("").sort().join("") === after.split("").sort().join("")
+    ? 1
+    : 0;
+}
+
+//모스부호 (1)
+//머쓱이는 친구에게 모스부호를 이용한 편지를 받았습니다.
+//그냥은 읽을 수 없어 이를 해독하는 프로그램을 만들려고 합니다.
+//문자열 letter가 매개변수로 주어질 때, letter를 영어 소문자로 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.
+
+let morse = {
+  ".-": "a",
+  "-...": "b",
+  "-.-.": "c",
+  "-..": "d",
+  ".": "e",
+  "..-.": "f",
+  "--.": "g",
+  "....": "h",
+  "..": "i",
+  ".---": "j",
+  "-.-": "k",
+  ".-..": "l",
+  "--": "m",
+  "-.": "n",
+  "---": "o",
+  ".--.": "p",
+  "--.-": "q",
+  ".-.": "r",
+  "...": "s",
+  "-": "t",
+  "..-": "u",
+  "...-": "v",
+  ".--": "w",
+  "-..-": "x",
+  "-.--": "y",
+  "--..": "z",
+};
+
+//map 사용
+function solution(letter) {
+  let a = letter.split(" ");
+  return a.map((a) => morse[a]).join("");
+}
+
+//reduce 사용
+function solution(letter) {
+  return letter.split(" ").reduce((prev, curr) => prev + morse[curr], "");
+}
+
+//for문 사용
+function solution(letter) {
+  const arr = letter.split(" ");
+  let answer = "";
+  for (const i of arr) {
+    answer += morse[i];
+  }
+  return answer;
+}
+
+//팩토리얼
+//i팩토리얼 (i!)은 1부터 i까지 정수의 곱을 의미합니다.
+//예를들어 5! = 5 * 4 * 3 * 2 * 1 = 120 입니다. 정수 n이 주어질 때 다음 조건을 만족하는
+// 가장 큰 정수 i를 return 하도록 solution 함수를 완성해주세요.
+
+// i! ≤ n
+
+function solution(n) {
+  let answer = 0;
+  for (let i = 0; i <= 10; i++) {
+    if (factorial(i) <= n) {
+      answer = i;
+    } else {
+      break;
+    }
+  }
+  return answer;
+}
+
+function factorial(num) {
+  let count = 1;
+  for (let i = num; i > 1; i--) {
+    count *= i;
+  }
+  return count;
+}
+
+//다른사람 풀이
+//while 문 활용.
+function solution(n) {
+  let i = 1;
+  let f = 1;
+  while (f * i < n) f *= ++i;
+  return i;
+}
