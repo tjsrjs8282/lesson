@@ -206,14 +206,14 @@ rl.on("line", function (line) {
 });
 
 //다른사람풀이
-//함수생성 호출
+
 //repeat 활용하기  문자열 반복하기
 rl.on("line", function (line) {
   input = line.split(" ");
 }).on("close", function () {
   solution(Number(input[0]));
 });
-
+//함수생성
 function solution(n) {
   for (let i = 1; i < n + 1; i++) {
     console.log("*".repeat(i));
