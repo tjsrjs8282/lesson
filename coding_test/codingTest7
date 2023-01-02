@@ -1,0 +1,50 @@
+//-----k의 개수
+//1부터 13까지의 수에서, 1은 1, 10, 11, 12, 13 이렇게 총 6번 등장합니다. 정수 i, j, k가 매개변수로 주어질 때,
+//i부터 j까지 k가 몇 번 등장하는지 return 하도록 solution 함수를 완성해주세요.
+
+function solution(i, j, k) {
+  var answer = 0;
+  let str = String(k);
+  for (let a = i; a <= j; a++) {
+    answer += (a + "").split("").filter((ele) => ele === str).length;
+  }
+  return answer;
+}
+
+//수정
+function solution(i, j, k) {
+  let answer = 0;
+  for (i; i <= j; i++) {
+    answer += (i + "").split("").filter((v) => v === k + "").length;
+  }
+  return answer;
+}
+
+//------가까운 수
+//정수 배열 array와 정수 n이 매개변수로 주어질 때,
+//array에 들어있는 정수 중 n과 가장 가까운 수를 return 하도록 solution 함수를 완성해주세요.
+function solution(emergency) {
+  let a = [...emergency].sort((a, b) => b - a);
+  return emergency.map((num) => a.indexOf(num) + 1);
+}
+
+//a 에 emergency를 깊은복사해서 오름차순정렬
+//emergency배열을 map함수로 돌려서 오름차순 깊은복사한 배열을 indexOf(인댁스찾기)+1
+
+//------한 번만 등장한 문자
+//문자열 s가 매개변수로 주어집니다.
+// s에서 한 번만 등장하는 문자를 사전 순으로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요.
+//한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
+
+//풀지 못함
+function solution(s) {
+  let answer = [];
+  for (let a of s) {
+    if (s.indexOf(a) === s.lastIndexOf(a)) {
+      answer.push(a);
+    }
+  }
+  return answer.sort().join("");
+}
+//for of 를 돌려서 s에서 각 a에 index값과 마지막 index 값이 같으면 1개밖에 없다는 뜻이여서 같으면
+//answer 에 a값을 push 한다. 그 후 오름차순+문자화 시켜서 return
