@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "react-scriptsc build",
+    "build": "craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,7 +40,12 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cil": "^0.0.1-security",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "webpack.config.js",
   "keywords": [],
