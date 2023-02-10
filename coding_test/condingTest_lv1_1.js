@@ -262,3 +262,11 @@ function collatz(num) {
   }
   return num == 1 ? answer : -1;
 }
+
+function solution(num) {
+  let answer = [];
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) answer.push(i);
+  }
+  return answer;
+}
