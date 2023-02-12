@@ -165,3 +165,80 @@ process.stdin.on("data", (data) => {
     console.log(row);
   }
 });
+
+//최소직사각형
+function solution(sizes) {
+  let w = 0;
+  let h = 0;
+  for (let len of sizes) {
+    const [a, b] = len.sort((a, b) => b - a);
+    if (a > w) w = a;
+    if (b > h) h = b;
+  }
+
+  return w * h;
+}
+
+//숫자 문자열과 영단어
+function solution(s) {
+  s = s
+    .replace(/zero/g, 0)
+    .replace(/one/g, 1)
+    .replace(/two/g, 2)
+    .replace(/three/g, 3)
+    .replace(/four/g, 4)
+    .replace(/five/g, 5)
+    .replace(/six/g, 6)
+    .replace(/seven/g, 7)
+    .replace(/eight/g, 8)
+    .replace(/nine/g, 9);
+  return parseInt(s);
+}
+
+function solution(s) {
+  let numbers = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+  ];
+  var answer = s;
+
+  for (let i = 0; i < numbers.length; i++) {
+    let arr = answer.split(numbers[i]);
+    answer = arr.join(i);
+  }
+
+  return Number(answer);
+}
+
+// 두개 뽑아서 더하기
+function solution(numbers) {
+  const arr = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      arr.push(numbers[i] + numbers[j]);
+    }
+  }
+
+  return [...new Set(arr)].sort((a, b) => a - b);
+}
+
+//크기가 작은 부분문자열
+function solution(t, p) {
+  let arr = [];
+  let len = p.length;
+
+  for (let i = 0; i <= t.length - p.length; i++) {
+    arr.push(t.substr(i, len));
+  }
+
+  return arr.filter((v) => +v <= +b).length;
+}
